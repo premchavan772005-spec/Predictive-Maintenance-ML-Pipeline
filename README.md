@@ -26,9 +26,9 @@ This production-grade platform ingests real-time industrial IoT telemetry, strea
 ### Page 1: Operational Factory Control Center
 *Provides an immediate high-level macro overview of factory floor uptime alongside an unaggregated micro-breakdown of mechanical failure bottlenecks.*
 
-✨ **[maintenance page1.png]**
+✨ ![Page 1 - Operational Factory Control Center](maintenance%20page1.png)
 
 ### Page 2: Predictive Maintenance Projections
 *Integrates the live Scikit-Learn Random Forest inference data, mapping anomaly clusters and serving an urgent high-risk maintenance action checklist sorted by machine failure probability.*
 
-✨ **[maintenance page2.png]**
+✨ ![Page 2 - Predictive Maintenance Projections](maintenance%20page2.png)
