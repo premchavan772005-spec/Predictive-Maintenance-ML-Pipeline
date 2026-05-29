@@ -20,3 +20,15 @@ This production-grade platform ingests real-time industrial IoT telemetry, strea
 3. Execute the ETL automated data stream pipeline script:
    ```bash
    python maintenance_etl.py
+
+   ## 📊 Executive BI Dashboard Interface
+
+### Page 1: Operational Factory Control Center
+*Provides an immediate high-level macro overview of factory floor uptime alongside an unaggregated micro-breakdown of mechanical failure bottlenecks.*
+
+✨ **[maintenance page1.png]**
+
+### Page 2: Predictive Maintenance Projections
+*Integrates the live Scikit-Learn Random Forest inference data, mapping anomaly clusters and serving an urgent high-risk maintenance action checklist sorted by machine failure probability.*
+
+✨ **[maintenance page2.png]**
