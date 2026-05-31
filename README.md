@@ -1,4 +1,5 @@
 # Predictive Maintenance End-to-End ML & Analytics Pipeline
+🚀 **[👉 Live ML Demo — Click Here](https://predictive-maintenance-ml-pipeline-keqeaamyyt8glyzdw4jype.streamlit.app/)**
 
 ## 📈 System Architecture Overview
 This production-grade platform ingests real-time industrial IoT telemetry, streams records into a central relational data warehouse, trains an ensemble Random Forest model to predict mechanical anomalies, and serves interactive risk projections on an executive Power BI dashboard layer.
