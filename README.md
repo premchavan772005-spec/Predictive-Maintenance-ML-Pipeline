@@ -1,35 +1,119 @@
-# Predictive Maintenance End-to-End ML & Analytics Pipeline
-🚀 **[👉 Live ML Demo — Click Here](https://predictive-maintenance-ml-pipeline-keqeaamyyt8glyzdw4jype.streamlit.app/)**
+# Predictive Maintenance ML Platform
+### Real-Time Machine Failure Prediction | Random Forest | Live on AWS EC2
 
-## 📈 System Architecture Overview
-This production-grade platform ingests real-time industrial IoT telemetry, streams records into a central relational data warehouse, trains an ensemble Random Forest model to predict mechanical anomalies, and serves interactive risk projections on an executive Power BI dashboard layer.
-## 🛠️ Tech Stack & Core Infrastructure
-* **Data Warehouse:** MySQL Engine (Relational Database)
-* **ETL Engine / Orchestration:** Python 3.14 (Pandas, SQLAlchemy, PyMySQL)
-* **Predictive ML Core:** Scikit-Learn (Random Forest Ensemble Classifier)
-* **BI Presentation Layer:** Power BI Desktop (Dual-Page Executive Dashboards)
+---
 
-## 📊 Business Key Performance Indicators (KPIs)
-* **Total Ingested Data Streams:** 10,000 baseline telemetry tracking logs
-* **Total Captured Anomaly Events:** 339 confirmed failure profiles
-* **ML Precision Target:** 89% (Extremely low false-alarm rate for floor crews)
-* **ML Robust F1-Score:** 70% (Optimized benchmark for highly imbalanced anomaly datasets)
+## What Business Problem Does This Solve?
 
-## 🚀 How to Run the Pipeline
-1. Clone this repository to your local runtime space.
-2. Spin up the local warehouse schema using the queries in `maintenance_warehouse.sql`.
-3. Execute the ETL automated data stream pipeline script:
-   ```bash
-   python maintenance_etl.py
+An unplanned machine breakdown on a factory floor costs an average of
+**₹5–20 lakhs per hour** in downtime, lost production, and emergency repairs.
+Traditional maintenance is either reactive (fix after failure) or scheduled
+(wasteful — servicing machines that don't need it).
 
-   ## 📊 Executive BI Dashboard Interface
+**This project answers the question every operations manager needs answered:**
+> *"Will this machine fail in the next cycle — before it actually does?"*
 
-### Page 1: Operational Factory Control Center
-*Provides an immediate high-level macro overview of factory floor uptime alongside an unaggregated micro-breakdown of mechanical failure bottlenecks.*
+---
 
-✨ ![Page 1 - Operational Factory Control Center](maintenance%20page1.png)
+## Business Results
 
-### Page 2: Predictive Maintenance Projections
-*Integrates the live Scikit-Learn Random Forest inference data, mapping anomaly clusters and serving an urgent high-risk maintenance action checklist sorted by machine failure probability.*
+| Metric | Value |
+|---|---|
+| Model accuracy | Random Forest classifier |
+| Input signals | Air temp, process temp, rotational speed, torque, tool wear |
+| Prediction | Binary — failure / no failure in real-time |
+| Deployment | Live on AWS EC2 — accessible via browser |
+| Response time | Instant inference from IoT sensor inputs |
 
-✨ ![Page 2 - Predictive Maintenance Projections](maintenance%20page2.png)
+---
+
+## Key Business Impact
+
+- **Prevents unplanned downtime** — maintenance teams get early warning before failure occurs
+- **Reduces maintenance cost** — service only machines that show failure signals, not all machines on schedule
+- **Works in real-time** — operations staff enter live sensor readings and get instant prediction
+- **No data science knowledge needed** — simple Streamlit UI built for floor managers, not analysts
+
+---
+
+## Live Demo
+
+🌐 **[Live App on AWS EC2](http://43.205.113.174:8502)**
+
+Enter any sensor values and get an instant failure prediction.
+
+---
+
+## How It Works
+
+```
+IoT Sensor Readings (live input)
+    │  Air Temp · Process Temp · RPM · Torque · Tool Wear
+    ▼
+Streamlit Web App (browser-based UI)
+    │
+    ▼
+Random Forest Classifier (.pkl model)
+    │  Trained on 10,000 labelled machine records
+    ▼
+Prediction Output
+    ├── ✅ No Failure Expected
+    └── ⚠️  Failure Risk Detected → Alert maintenance team
+```
+
+---
+
+## ML Model Details
+
+| Parameter | Detail |
+|---|---|
+| Algorithm | Random Forest Classifier |
+| Library | Scikit-Learn |
+| Features | 5 sensor inputs (temperature, speed, torque, wear) |
+| Target | Binary classification (failure / no failure) |
+| Dataset | UCI AI4I 2020 Predictive Maintenance Dataset |
+
+---
+
+## Deployment Architecture
+
+```
+AWS EC2 (t2.medium)
+└── Docker Container
+    ├── Streamlit app.py    → Port 8502
+    └── model.pkl           → Random Forest (pre-trained)
+```
+
+Deployed as a Docker container on AWS EC2. No database required —
+model is loaded from a `.pkl` file at startup. Zero external dependencies.
+
+---
+
+## Tech Stack
+
+| Layer | Tool |
+|---|---|
+| ML model | Python, Scikit-Learn, Random Forest |
+| Web app | Streamlit |
+| Deployment | Docker, AWS EC2 |
+| Dataset | UCI AI4I 2020 (10,000 records, 5 features) |
+
+---
+
+## How to Run Locally
+
+```bash
+# 1. Clone the repo
+git clone https://github.com/premchavan772005-spec/Predictive-Maintenance-ML-Pipeline
+
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Run the app
+streamlit run app.py
+```
+
+---
+
+*Built by Prem Chavan | Data Analyst*
+*Skills: Python · Scikit-Learn · Machine Learning · Streamlit · Docker · AWS EC2*
